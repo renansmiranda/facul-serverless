@@ -46,7 +46,7 @@ Resources:
        GetTripsRecordsByCoutry:
          Type: Api
          Properties:
-           Path: /trips/{topic}/findByCoutry
+           Path: /trips/{country}/findByCoutry
            Method: get
            RequestParameters:
               - method.request.querystring.Coutry
@@ -64,7 +64,7 @@ Resources:
        GetTripsRecordsByCity:
          Type: Api
          Properties:
-           Path: /trips/{topic}/findByCity
+           Path: /trips/{country}/findByCity
            Method: get
            RequestParameters:
               - method.request.querystring.Coutry
