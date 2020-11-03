@@ -14,26 +14,22 @@ public class Trips {
 	@DynamoDBRangeKey(attributeName = "city")
 	private String city;
 
-	@DynamoDBIndexRangeKey(attributeName = "date")
-	private String date;
+//	@DynamoDBIndexRangeKey(attributeName = "date")
+//	private String date;
 
+	@DynamoDBAttribute(attributeName = "date")
+	private String date;
+	
 	@DynamoDBAttribute(attributeName = "reason")
 	private String reason;
 	
-//	@DynamoDBAttribute(attributeName = "description")
-//	private String description;
-
-//	@DynamoDBIndexRangeKey(attributeName = "consumed", localSecondaryIndexName = "consumedIndex")
-//	private String consumed;
-
 	public Trips(String country, String date, String city, String reason) {
 		super();
 		this.country = country;
 		this.date = date;
 		this.city = city;
 		this.reason = reason;
-		//this.description = description;
-//		this.consumed = consumed;
+
 	}
 
 	public Trips() {
@@ -72,20 +68,6 @@ public class Trips {
 		this.reason = reason;
 	}
 
-//	public String getDescription() {
-//		return description;
-//	}
 
-//	public void setDescription(String description) {
-//		this.description = description;
-//	}
-
-//	public String getConsumed() {
-//		return consumed;
-//	}
-
-//	public void setConsumed(String consumed) {
-//		this.consumed = consumed;
-//	}
 
 }

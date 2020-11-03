@@ -57,8 +57,7 @@ Resources:
       AttributeDefinitions:
         - AttributeName: country
           AttributeType: S
-        # - AttributeName: date
-        #   AttributeType: S
+
         - AttributeName: city
           AttributeType: S          
       KeySchema:

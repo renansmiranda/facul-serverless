@@ -8,12 +8,13 @@ import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBMapper;
 import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBQueryExpression;
 import com.amazonaws.services.dynamodbv2.model.AttributeValue;
 
+
 import br.com.iwe.model.Trips;
 
 public class TripsRepository {
 
 	private static final DynamoDBMapper mapper = DynamoDBManager.mapper();
-
+	
 	public Trips save(final Trips trips) {
 		mapper.save(trips);
 		return trips;
