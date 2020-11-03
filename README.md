@@ -77,8 +77,9 @@ Next, the following command will create a Cloudformation Stack and deploy your S
 ```bash
 sam deploy \
     --template-file packaged.yaml \
-    --stack-name study-datalake \
-    --capabilities CAPABILITY_IAM
+    --stack-name TRIP \
+    --capabilities CAPABILITY_IAM \
+    --profile fiap
 ```
 
 > **See [Serverless Application Model (SAM) HOWTO Guide](https://github.com/awslabs/serverless-application-model/blob/master/HOWTO.md) for more details in how to get started.**
