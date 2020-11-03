@@ -1,0 +1,86 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+Description: "trips Rest API to manage trips \n"
+Globals:
+  Function:
+    Timeout: 20
+    MemorySize: 512
+    Environment:
+      Variables:
+        TABLE_NAME:
+          Ref: tripsTable
+        ENDPOINT_OVERRIDE: ''
+Resources:
+  CreateTripsRecordFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      CodeUri: s3://22cld-rm338220-renan-miranda/7a691b4a1795081a5f8749ff2edd4473
+      Handler: br.com.iwe.handler.CreateTripsRecord::handleRequest
+      Runtime: java8
+      Policies:
+      - DynamoDBCrudPolicy:
+          TableName:
+            Ref: tripsTable
+      Events:
+        CreateTripsRecord:
+          Type: Api
+          Properties:
+            Path: /trips
+            Method: post
+  GetTripsRecordsByCityFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      CodeUri: s3://22cld-rm338220-renan-miranda/7a691b4a1795081a5f8749ff2edd4473
+      Handler: br.com.iwe.handler.GetTripsRecordsByCity::handleRequest
+      Runtime: java8
+      Policies:
+      - DynamoDBCrudPolicy:
+          TableName:
+            Ref: tripsTable
+      Events:
+        GetTripsRecordsByCity:
+          Type: Api
+          Properties:
+            Path: /trips/{country}/findByCity
+            Method: get
+            RequestParameters:
+            - method.request.querystring.city
+  tripsTable:
+    Type: AWS::DynamoDB::Table
+    Properties:
+      TableName: trips
+      AttributeDefinitions:
+      - AttributeName: country
+        AttributeType: S
+      - AttributeName: dateTimeCreation
+        AttributeType: S
+      - AttributeName: city
+        AttributeType: S
+      KeySchema:
+      - AttributeName: country
+        KeyType: HASH
+      - AttributeName: city
+        KeyType: RANGE
+      LocalSecondaryIndexes:
+      - IndexName: cityIndex
+        KeySchema:
+        - AttributeName: country
+          KeyType: HASH
+        - AttributeName: dateTimeCreation
+          KeyType: RANGE
+        Projection:
+          ProjectionType: ALL
+      BillingMode: PAY_PER_REQUEST
+Outputs:
+  CreateTripsRecordFunction:
+    Description: CreateTripsRecord Lambda Function ARN
+    Value:
+      Fn::GetAtt:
+      - CreateTripsRecordFunction
+      - Arn
+  GetTripsRecordsByCityFunction:
+    Description: GetTripsRecordsByCity Lambda Function ARN
+    Value:
+      Fn::GetAtt:
+      - GetTripsRecordsByCityFunction
+      - Arn
