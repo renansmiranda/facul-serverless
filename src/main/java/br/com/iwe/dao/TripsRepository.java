@@ -26,10 +26,11 @@ public class TripsRepository {
 		eav.put(":val2", new AttributeValue().withS(city));
 
 		final DynamoDBQueryExpression<Trips> queryExpression = new DynamoDBQueryExpression<Trips>()
+				.withIndexName("cityIndex").withConsistentRead(false)
 				.withKeyConditionExpression("country = :val1 and city=:val2").withExpressionAttributeValues(eav);
 
-		final List<Trips> studies = mapper.query(Trips.class, queryExpression);
+		final List<Trips> viagens = mapper.query(Trips.class, queryExpression);
 
-		return studies;
+		return viagens;
 	}
 }

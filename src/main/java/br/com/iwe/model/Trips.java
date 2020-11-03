@@ -14,7 +14,7 @@ public class Trips {
 	@DynamoDBRangeKey(attributeName = "city")
 	private String city;
 
-	@DynamoDBIndexRangeKey(attributeName = "date", localSecondaryIndexName = "dateIndex")
+	@DynamoDBIndexRangeKey(attributeName = "date")
 	private String date;
 
 	@DynamoDBAttribute(attributeName = "reason")

@@ -14,7 +14,7 @@ Resources:
   CreateTripsRecordFunction:
     Type: AWS::Serverless::Function
     Properties:
-      CodeUri: s3://22cld-rm338220-renan-miranda/7a691b4a1795081a5f8749ff2edd4473
+      CodeUri: s3://22cld-rm338220-renan-miranda/6241ae496ddf321646ccb5d084ed7d67
       Handler: br.com.iwe.handler.CreateTripsRecord::handleRequest
       Runtime: java8
       Policies:
@@ -30,7 +30,7 @@ Resources:
   GetTripsRecordsByCityFunction:
     Type: AWS::Serverless::Function
     Properties:
-      CodeUri: s3://22cld-rm338220-renan-miranda/7a691b4a1795081a5f8749ff2edd4473
+      CodeUri: s3://22cld-rm338220-renan-miranda/6241ae496ddf321646ccb5d084ed7d67
       Handler: br.com.iwe.handler.GetTripsRecordsByCity::handleRequest
       Runtime: java8
       Policies:
@@ -52,8 +52,6 @@ Resources:
       AttributeDefinitions:
       - AttributeName: country
         AttributeType: S
-      - AttributeName: dateTimeCreation
-        AttributeType: S
       - AttributeName: city
         AttributeType: S
       KeySchema:
@@ -66,7 +64,7 @@ Resources:
         KeySchema:
         - AttributeName: country
           KeyType: HASH
-        - AttributeName: dateTimeCreation
+        - AttributeName: city
           KeyType: RANGE
         Projection:
           ProjectionType: ALL

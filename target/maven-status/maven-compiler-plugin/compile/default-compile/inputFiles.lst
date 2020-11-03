@@ -1,7 +1,7 @@
-/home/rsobreira/Desktop/POS-CLOUD/LAB-FIAP-PETERSON/jeferson2/Lambda-apigateway-dynamodb/src/main/java/br/com/iwe/model/Trips.java
-/home/rsobreira/Desktop/POS-CLOUD/LAB-FIAP-PETERSON/jeferson2/Lambda-apigateway-dynamodb/src/main/java/br/com/iwe/model/HandlerRequest.java
-/home/rsobreira/Desktop/POS-CLOUD/LAB-FIAP-PETERSON/jeferson2/Lambda-apigateway-dynamodb/src/main/java/br/com/iwe/handler/GetTripsRecordsByCity.java
-/home/rsobreira/Desktop/POS-CLOUD/LAB-FIAP-PETERSON/jeferson2/Lambda-apigateway-dynamodb/src/main/java/br/com/iwe/dao/DynamoDBManager.java
-/home/rsobreira/Desktop/POS-CLOUD/LAB-FIAP-PETERSON/jeferson2/Lambda-apigateway-dynamodb/src/main/java/br/com/iwe/dao/TripsRepository.java
-/home/rsobreira/Desktop/POS-CLOUD/LAB-FIAP-PETERSON/jeferson2/Lambda-apigateway-dynamodb/src/main/java/br/com/iwe/handler/CreateTripsRecord.java
-/home/rsobreira/Desktop/POS-CLOUD/LAB-FIAP-PETERSON/jeferson2/Lambda-apigateway-dynamodb/src/main/java/br/com/iwe/model/HandlerResponse.java
+/home/rsobreira/Desktop/POS-CLOUD/LAB-FIAP-PETERSON/certo/facul-serverless/src/main/java/br/com/iwe/handler/CreateTripsRecord.java
+/home/rsobreira/Desktop/POS-CLOUD/LAB-FIAP-PETERSON/certo/facul-serverless/src/main/java/br/com/iwe/model/HandlerResponse.java
+/home/rsobreira/Desktop/POS-CLOUD/LAB-FIAP-PETERSON/certo/facul-serverless/src/main/java/br/com/iwe/handler/GetTripsRecordsByCity.java
+/home/rsobreira/Desktop/POS-CLOUD/LAB-FIAP-PETERSON/certo/facul-serverless/src/main/java/br/com/iwe/dao/TripsRepository.java
+/home/rsobreira/Desktop/POS-CLOUD/LAB-FIAP-PETERSON/certo/facul-serverless/src/main/java/br/com/iwe/model/HandlerRequest.java
+/home/rsobreira/Desktop/POS-CLOUD/LAB-FIAP-PETERSON/certo/facul-serverless/src/main/java/br/com/iwe/dao/DynamoDBManager.java
+/home/rsobreira/Desktop/POS-CLOUD/LAB-FIAP-PETERSON/certo/facul-serverless/src/main/java/br/com/iwe/model/Trips.java
