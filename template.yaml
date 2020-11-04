@@ -49,6 +49,25 @@ Resources:
            RequestParameters:
               - method.request.querystring.city
 
+
+  GetTripsRecordsByCountryFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+     CodeUri: target/trips-1.0.0-SNAPSHOT-jar-with-dependencies.jar
+     Handler: br.com.iwe.handler.GetTripsRecordsByCountry::handleRequest
+     Runtime: java8
+     Policies:
+       - DynamoDBCrudPolicy:
+           TableName: !Ref tripsTable     
+     Events:
+       GetTripsRecordsByCountry:
+         Type: Api
+         Properties:
+           Path: /trips/{country}
+           Method: get
+           RequestParameters:
+              - method.request.querystring.country
+
               
   tripsTable:
     Type: AWS::DynamoDB::Table

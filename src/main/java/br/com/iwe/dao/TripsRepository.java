@@ -34,4 +34,20 @@ public class TripsRepository {
 
 		return viagens;
 	}
+	
+	public List<Trips> findByCountry(final String country) {
+
+		final Map<String, AttributeValue> eav = new HashMap<String, AttributeValue>();
+		eav.put(":val1", new AttributeValue().withS(country));
+		
+
+		final DynamoDBQueryExpression<Trips> queryExpression = new DynamoDBQueryExpression<Trips>()
+				.withIndexName("cityIndex").withConsistentRead(false)
+				.withKeyConditionExpression("country = :val1").withExpressionAttributeValues(eav);
+
+		final List<Trips> viagens = mapper.query(Trips.class, queryExpression);
+
+		return viagens;
+	}
+	
 }
